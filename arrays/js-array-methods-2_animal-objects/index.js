@@ -111,7 +111,19 @@ const animalsSortedAlphabetically = animals.slice().sort((a, b) => {
 });
 //sorts objects in Array by name z to a and returns them
 
-const animalsSortedByWeightStartingWithLowest = animals.sort;
+const animalsSortedByWeightStartingWithLowest = animals.slice().sort((a, b) => {
+  const nameA = a.weight;
+  const nameB = b.weight;
+  let myReturn = null;
+
+  nameA > nameB
+    ? (myReturn = 1)
+    : nameA < nameB
+    ? (myReturn = -1)
+    : (myReturn = 0);
+  return myReturn;
+});
+console.log(animalsSortedByWeightStartingWithLowest);
 
 const animalsSortedByWeightReversed = null;
 
